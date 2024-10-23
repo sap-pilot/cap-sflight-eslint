@@ -1,7 +1,7 @@
 using { sap.fe.cap.travel as my } from '../db/schema';
 
 @(path:'/processor') 
-service TravelService @(requires: '')  {
+service TravelService {
 
   entity Travel as projection on my.Travel actions {
     action createTravelByTemplate() returns Travel;

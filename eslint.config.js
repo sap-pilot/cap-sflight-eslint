@@ -42,8 +42,7 @@ module.exports = [
     ...cdsPlugin.configs.recommended,
     files: ['**/*.cds'],
     rules: {
-      "@sap/cds/auth-no-empty-restrictions": "error",
-      "@sap/cds/auth-use-requires": "error"
+      ...cdsPlugin.configs.recommended.rules
     }
   }
 ]

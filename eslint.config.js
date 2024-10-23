@@ -2,6 +2,7 @@
 
 const eslint_js = require('@eslint/js')
 const globals = require('globals')
+const cdsPlugin = require('@sap/eslint-plugin-cds')
 
 module.exports = [
   {
@@ -35,6 +36,14 @@ module.exports = [
     rules: {
       'no-console': 'off',
       'require-atomic-updates': 'off'
+    }
+  },
+  {
+    ...cdsPlugin.configs.recommended,
+    files: ['**/*.cds'],
+    rules: {
+      "@sap/cds/auth-no-empty-restrictions": "error",
+      "@sap/cds/auth-use-requires": "error"
     }
   }
 ]
